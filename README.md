@@ -80,3 +80,6 @@ const cachedFetch = (url, options) => {
   })
 }
 ```
+## Reference
+- https://www.sitepoint.com/cache-fetched-ajax-requests/
+- http://ramdajs.com/docs/#memoize

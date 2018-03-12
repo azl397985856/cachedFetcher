@@ -38,7 +38,7 @@ const cachedFetch = (url, options) => {
     // I hope you didn't set it to 0 seconds
     expiry = options.seconds || expiry
   }
-  // Use the URL as the cache key to sessionStorage
+  // Use the URL as the cache key to localStorage
   let cacheKey = url
   let cached = localStorage.getItem(cacheKey)
   let whenCached = localStorage.getItem(cacheKey + ':ts')

@@ -43,10 +43,6 @@ const cachedFetch = (url, options) => {
   let cached = localStorage.getItem(cacheKey)
   let whenCached = localStorage.getItem(cacheKey + ':ts')
   if (cached !== null && whenCached !== null) {
-    // it was in sessionStorage! Yay!
-    // Even though 'whenCached' is a string, this operation
-    // works because the minus sign converts the
-    // string to an integer and it will work.
     let age = (Date.now() - whenCached) / 1000
     if (age < expiry) {
       let response = new Response(new Blob([cached]))
@@ -65,8 +61,6 @@ const cachedFetch = (url, options) => {
       let ct = response.headers.get('Content-Type')
       if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
         // There is a .json() instead of .text() but
-        // we're going to store it in sessionStorage as
-        // string anyway.
         // If we don't clone the response, it will be
         // consumed by the time it's returned. This
         // way we're being un-intrusive.

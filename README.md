@@ -81,5 +81,5 @@ const cachedFetch = (url, options) => {
 }
 ```
 ## Reference
-- https://www.sitepoint.com/cache-fetched-ajax-requests/
-- http://ramdajs.com/docs/#memoize
+- [cache-fetched-ajax-requests](https://www.sitepoint.com/cache-fetched-ajax-requests/)
+- [memoize](http://ramdajs.com/docs/#memoize)
